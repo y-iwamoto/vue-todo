@@ -15,7 +15,7 @@
         <td>
           <button>{{ todo.status }}</button>
         </td>
-        <td><button>削除</button></td>
+        <td><button @click="clickDelete(todo.id)">削除</button></td>
       </tr>
     </tbody>
   </table>
@@ -26,6 +26,11 @@ export default {
   name: 'TodoList',
   props: {
     todos: Array,
+  },
+  methods: {
+    clickDelete(id) {
+      this.$emit('delete', id)
+    },
   },
 }
 </script>

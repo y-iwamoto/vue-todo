@@ -9,5 +9,10 @@ const actions = {
       status: '作業中',
     })
   },
+  deleteTodoAcion({ commit }, payload) {
+    commit('deleteAndAdjustTodo', {
+      id: payload.id,
+    })
+  },
 }
 export default actions
