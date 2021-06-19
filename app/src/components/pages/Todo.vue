@@ -1,7 +1,11 @@
 <template>
   <div>
     <h1>ToDoリスト</h1>
-    <TodoList :todos="getTodos" @delete="deleteTodo($event)" />
+    <TodoList
+      :todos="getTodos"
+      @delete="deleteTodo($event)"
+      @change="changeStatusTodo($event)"
+    />
     <TodoInput @addTodo="addTodo($event)" />
   </div>
 </template>
@@ -26,12 +30,19 @@ export default {
     ...mapGetters(['getTodos']),
   },
   methods: {
-    ...mapActions(['addTodoAcion', 'deleteTodoAcion']),
+    ...mapActions([
+      'addTodoAcion',
+      'deleteTodoAcion',
+      'changeStatusTodoAction',
+    ]),
     addTodo(todo) {
       this.addTodoAcion({ comment: todo })
     },
     deleteTodo(id) {
       this.deleteTodoAcion({ id: id })
+    },
+    changeStatusTodo(id) {
+      this.changeStatusTodoAction({ id: id })
     },
   },
 }

@@ -14,5 +14,10 @@ const actions = {
       id: payload.id,
     })
   },
+  changeStatusTodoAction({ commit }, payload) {
+    commit('changeStatusTodo', {
+      id: payload.id,
+    })
+  },
 }
 export default actions

@@ -13,7 +13,7 @@
         <td>{{ todo.id }}</td>
         <td>{{ todo.comment }}</td>
         <td>
-          <button>{{ todo.status }}</button>
+          <button @click="clickChange(todo.id)">{{ todo.status }}</button>
         </td>
         <td><button @click="clickDelete(todo.id)">削除</button></td>
       </tr>
@@ -30,6 +30,9 @@ export default {
   methods: {
     clickDelete(id) {
       this.$emit('delete', id)
+    },
+    clickChange(id) {
+      this.$emit('change', id)
     },
   },
 }
