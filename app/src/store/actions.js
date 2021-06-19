@@ -19,5 +19,10 @@ const actions = {
       id: payload.id,
     })
   },
+  filterTodosAction({ commit }, payload) {
+    commit('setFilter', {
+      filter: payload.filter,
+    })
+  },
 }
 export default actions

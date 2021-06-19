@@ -23,5 +23,8 @@ const mutations = {
       }
     })
   },
+  setFilter(state, payload) {
+    state.filter = payload.filter
+  },
 }
 export default mutations

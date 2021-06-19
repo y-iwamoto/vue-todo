@@ -1,5 +1,5 @@
 const state = () => ({
-  filter: 'all',
+  filter: '全て',
   todos: [],
 })
 export default state
