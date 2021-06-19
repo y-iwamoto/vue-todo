@@ -24,11 +24,6 @@ export default {
     TodoList,
     TodoFilter,
   },
-  data() {
-    return {
-      todos: [],
-    }
-  },
   computed: {
     ...mapGetters(['getTodos']),
   },
