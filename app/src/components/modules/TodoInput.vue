@@ -36,6 +36,7 @@ export default {
         this.error = ''
       }
       this.$emit('addTodo', this.todo)
+      this.todo = ''
     },
   },
 }
