@@ -15,12 +15,6 @@ describe('Testing TodoInput component', () => {
     wrapper.destroy()
   })
 
-  it('Initial rendering', () => {
-    expect(wrapper.text()).toContain('新規タスクの追加')
-    expect(wrapper.text()).toContain('追加')
-    expect(wrapper.text()).not.toContain(errorText)
-  })
-
   it('The input form is empty', async () => {
     await wrapper.get('input').setValue('')
     await wrapper.find('form').trigger('submit.prevent')

@@ -11,16 +11,6 @@ describe('Testing TodoFilter component', () => {
     wrapper.destroy()
   })
 
-  it('Initial rendering', () => {
-    expect(wrapper.text()).toContain('全て')
-    expect(wrapper.text()).toContain('作業中')
-    expect(wrapper.text()).toContain('完了')
-
-    expect(
-      wrapper.findAll('input[type="radio"]').at(0).element.checked
-    ).toBeTruthy()
-  })
-
   it('select each radio button', async () => {
     const radioInputs = wrapper.findAll('input[type="radio"]')
 

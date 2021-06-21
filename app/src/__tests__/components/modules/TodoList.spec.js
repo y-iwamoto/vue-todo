@@ -17,13 +17,6 @@ describe('Testing TodoList component', () => {
     wrapper.destroy()
   })
 
-  it('Initial rendering', () => {
-    expect(wrapper.text()).toContain('ID')
-    expect(wrapper.text()).toContain('コメント')
-    expect(wrapper.text()).toContain('状態')
-    expect(wrapper.text()).not.toContain('削除')
-  })
-
   it('todos empty', async () => {
     await wrapper.setProps({
       todos: [],
