@@ -3,7 +3,7 @@
     <h1>ToDoリスト</h1>
     <TodoFilter @filter="filterTodos($event)" />
     <TodoList
-      :todos="getTodos"
+      :todos="todos"
       @delete="deleteTodo($event)"
       @change="changeStatusTodo($event)"
     />
@@ -25,7 +25,10 @@ export default {
     TodoFilter,
   },
   computed: {
-    ...mapGetters(['getTodos']),
+    ...mapGetters(['getTodos', 'getFilter']),
+    todos() {
+      return this.getTodos(this.getFilter)
+    },
   },
   methods: {
     ...mapActions([
