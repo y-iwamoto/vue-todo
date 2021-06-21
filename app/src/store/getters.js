@@ -1,8 +1,8 @@
 const getters = {
-  getLatestTodo(state) {
+  getLatestTodo: (state) => {
     return state.todos.length !== 0 ? state.todos.slice(-1)[0] : null
   },
-  getFilter(state) {
+  getFilter: (state) => {
     return state.filter
   },
   getTodos: (state) => (filter) => {
