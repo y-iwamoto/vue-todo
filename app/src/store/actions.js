@@ -1,7 +1,6 @@
-import store from './index'
 const actions = {
-  addTodoAcion({ commit }, payload) {
-    const latestTodo = store.getters['getLatestTodo']
+  addTodoAcion({ commit, getters }, payload) {
+    const latestTodo = getters['getLatestTodo']
     const nextId = latestTodo ? latestTodo.id + 1 : 0
     commit('setTodo', {
       id: nextId,
