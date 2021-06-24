@@ -35,7 +35,7 @@ describe('getters', () => {
       expect(result).toEqual(todos)
     })
 
-    it('filter value is with the exception of 全て', () => {
+    it('Filters except for 全て ', () => {
       const state = {
         todos: todos,
       }
