@@ -1,14 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { storiesOf } from '@storybook/vue'
 import Todo from '../src/components/pages/Todo.vue'
 Vue.use(Vuex)
 
-storiesOf('Todo', module).add('Todo', () => ({
+export default {
+  title: 'Todo',
+  component: Todo,
+}
+
+const Template = () => ({
   components: { Todo },
-  template: `
-    <Todo/>
-    `,
+  template: `<Todo /> `,
   store: new Vuex.Store({
     modules: [
       {
@@ -90,4 +92,5 @@ storiesOf('Todo', module).add('Todo', () => ({
       },
     ],
   }),
-}))
+})
+export const Display = Template.bind({})
