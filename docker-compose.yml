@@ -8,3 +8,9 @@ services:
     volumes:
     - ./app/:/app
     - /app/node_modules
+  storybook:
+    build: ./app/.storybook
+    volumes:
+        - ./app/:/app
+    ports:
+      - '5000:3001'

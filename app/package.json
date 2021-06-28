@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook --ci -p 3001 -c .storybook"
   },
   "dependencies": {
     "@babel/preset-env": "^7.14.5",
@@ -15,6 +16,7 @@
     "vuex": "^3.6.2"
   },
   "devDependencies": {
+    "@storybook/vue": "^6.3.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
