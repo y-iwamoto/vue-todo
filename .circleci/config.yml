@@ -1,0 +1,49 @@
+version: 2.1
+executors:
+  default:
+    working_directory: ~/workspace
+    docker:
+      - image: node:14
+
+commands:
+  restore_npm:
+    steps:
+      - restore_cache:
+          name: Restore npm dependencies
+          key: npm-{{ checksum "app/package.json" }}
+  save_npm:
+    steps:
+      - save_cache:
+          name: Cache npm dependencies
+          key: npm-{{ checksum "app/package.json" }}
+          paths:
+            - app/node_modules
+jobs:
+  setup:
+    executor:
+      name: default
+    steps:
+      - checkout
+      - run:
+          working_directory: app
+          name: Install libraries
+          command: npm install
+      - save_npm
+  test:
+    executor:
+      name: default
+    steps:
+      - checkout
+      - restore_npm
+      - run:
+          working_directory: app
+          name: Test
+          command: npm run test
+      - save_npm
+workflows:
+  pull-request:
+    jobs:
+      - setup
+      - test:
+          requires:
+            - setup
